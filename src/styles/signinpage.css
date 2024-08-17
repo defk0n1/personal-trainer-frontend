@@ -1,0 +1,152 @@
+
+
+
+.signin-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh; 
+    background-position: 47vw center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color:black;
+     }
+
+
+
+
+.signin-wrapper p{
+    margin-top: 2rem;
+    color: rgb(255, 255, 255);
+}
+
+.signin-wrapper h1{
+    color: rgb(255, 255, 255);
+}
+
+
+.signin-wrapper form{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 4rem;
+    /* background: rgba(255, 255, 255, 0.2); */
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    margin-left: 14vw;
+}
+
+
+
+.signin-input{
+  margin: unset;
+  padding: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  width: 20vw;
+}
+
+
+.signin-wrapper button {
+    margin-top: 3rem;
+    align-self: flex-start;
+    box-shadow:inset 0px 34px 0px -15px #b54b3a;
+	background-color:#a73f2d;
+	border:1px solid #241d13;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	font-weight:bold;
+	padding:9px 23px;
+	text-decoration:none;
+
+
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+    
+
+
+.signin-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh; 
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: black;
+
+     }
+
+
+
+
+.signin-wrapper p{
+    margin-top: 3rem;
+    color: rgb(255, 255, 255);
+}
+
+.signin-wrapper h1{
+    color: rgb(255, 255, 255);
+}
+
+
+.signin-wrapper form{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    margin-left: 0;
+    margin-top: 10vh;
+    
+}
+
+
+
+.signin-input{
+  margin: unset;
+  padding: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  width: unset;
+
+}
+
+
+.signin-wrapper button {
+    margin-top: 3rem;
+    align-self: unset;
+
+}
+
+
+
+
+
+
+
+
+
+
+}

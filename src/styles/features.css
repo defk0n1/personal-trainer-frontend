@@ -1,0 +1,157 @@
+
+.features-title{
+    height: 20vh;
+    display: flex;
+    background:red;
+    color:rgb(255, 255, 255);
+    align-items:center ;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    font-family: 'Superset';
+    
+}
+
+.features-title h1 {
+    font-size: 4rem;
+    font-family: "Superset";
+    letter-spacing: .1rem;
+}
+
+
+
+.feature-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.features-img img{
+    width: 50vw;
+    height: 100vh;
+    position: relative;
+    z-index: -1;
+}
+.features-img {
+    background:linear-gradient(135deg, #ffffff00 10%, #ff000075 100%)  ;
+}
+
+.features-body{
+    width: 50vw;
+    height: 100vh;
+    background-color: rgb(22, 22, 22) ;
+ 
+
+}
+
+
+.content-wrapper{
+    /* width:70%; */
+    height: 75%;
+    padding-top:15%;
+    padding-left:10% ;
+    padding-right:10% ;
+    color: white;
+
+}
+
+.content-wrapper p{
+    font-family: 'Poppins';
+    margin: 0;
+}
+
+.content-wrapper h1{
+    font-family: 'Superset';
+    font-weight: 200;
+    font-size: 5rem;
+}
+
+.features-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10%;
+}
+
+.feature-icon{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.feature-icon img{
+    height:60px;
+    width: 60px;
+    align-self: center;
+}
+
+.feature-icon h1{
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    align-self: center;
+    text-align: center;
+    font-weight: 600;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .feature-container{
+        height: fit-content;
+        width: 100vw;
+        display: grid; 
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .features-img img{
+        width: 100vw;
+        height: 100%;
+        position: relative;
+        z-index: -1;
+        margin: 0;
+        grid-area:1/1 ;
+
+    }
+    .features-img {
+        background:linear-gradient(135deg, #ffffff00 10%, #aa242475 100%)  ;
+        grid-area:1/1 ;
+
+    }
+    
+    .features-body{
+        width: 100vw;
+        height: fit-content;
+        background-color: rgba(22, 22, 22, 0) ;
+        grid-area:1/1 ;
+        z-index: 2; ;
+
+    
+    }
+    
+    .content-wrapper p{
+        font-family: 'Poppins';
+        margin: 0;
+        font-size: 1rem;
+    }
+    .features-icons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 10%;
+        padding-bottom:15%;
+
+
+    }
+    .feature-icon img{
+        height:60px;
+        width: 60px;
+        align-self: center;
+        
+    }
+    
+
+
+
+
+}

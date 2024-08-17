@@ -1,0 +1,402 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 6658,
+      "max": [
+        0.03703935444355011,
+        0.31090566515922546,
+        0.037039339542388916
+      ],
+      "min": [
+        -0.03703932464122772,
+        -0.31090277433395386,
+        -0.037039343267679214
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 79896,
+      "componentType": 5126,
+      "count": 6658,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 6658,
+      "max": [
+        0.9652588963508606,
+        0.9718626141548157
+      ],
+      "min": [
+        -1.8252352518288717e-08,
+        0.14204780757427216
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 22272,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 159792,
+      "componentType": 5126,
+      "count": 108,
+      "max": [
+        0.028000017628073692,
+        0.13352642953395844,
+        0.02799999713897705
+      ],
+      "min": [
+        -0.027999980375170708,
+        -0.13352353870868683,
+        -0.027999989688396454
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 161088,
+      "componentType": 5126,
+      "count": 108,
+      "max": [
+        1.0,
+        3.4758315337057866e-08,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -3.4796638459511087e-08,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 53264,
+      "componentType": 5126,
+      "count": 108,
+      "max": [
+        0.8955243825912476,
+        0.8619846105575562
+      ],
+      "min": [
+        0.33658793568611145,
+        -9.508112075451436e-10
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 89088,
+      "componentType": 5125,
+      "count": 384,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 162384,
+      "componentType": 5126,
+      "count": 5825,
+      "max": [
+        0.14196278154850006,
+        0.2780057191848755,
+        0.14196278154850006
+      ],
+      "min": [
+        -0.14196276664733887,
+        -0.2780027389526367,
+        -0.14196278154850006
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 232284,
+      "componentType": 5126,
+      "count": 5825,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 54128,
+      "componentType": 5126,
+      "count": 5825,
+      "max": [
+        0.9999999403953552,
+        0.9989327788352966
+      ],
+      "min": [
+        -4.483385040998655e-08,
+        -2.058440307095566e-09
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 90624,
+      "componentType": 5125,
+      "count": 19200,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Jampre (https://sketchfab.com/jampre)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/dumbbell-c2930527d4dc4de39037cfb4de9e25a7",
+      "title": "Dumbbell"
+    },
+    "generator": "Sketchfab-16.12.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 167424,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 100728,
+      "byteOffset": 167424,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 302184,
+      "byteOffset": 268152,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 570336,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "material",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.246801,
+          0.246801,
+          0.246801,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9348311014396942
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "barmiddle",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.412123,
+          0.412123,
+          0.412123,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.94487723789213
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "weights",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallicFactor": 0.0
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "dumbell_bar_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "dumbell_barmiddle_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "dumbell_weights_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "f41f6a3a86f04a2f92327137b10bdc3b.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "dumbell"
+    },
+    {
+      "mesh": 0,
+      "name": "dumbell_bar_0"
+    },
+    {
+      "mesh": 1,
+      "name": "dumbell_barmiddle_0"
+    },
+    {
+      "mesh": 2,
+      "name": "dumbell_weights_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

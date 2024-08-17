@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;1,300;1,500;1,700&display=swap");
+
+
+
+/* :root {
+  --black: #000000;
+  --pink1: #fe80b6;
+  --pink2: #d60ec6;
+  --purple: #5e0b46;
+  --blue: #2a234e;
+  --regular-font: "Josefin Sans", sans-serif;
+  --roboto-font: "Share Tech Mono", monospace;
+} */
+
+#faq {
+  height: 100vh;
+  color: white;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  background-color: #151515;
+}
+#faq *{
+  box-sizing: border-box;
+
+}
+
+#faq > .section-title {
+  padding: 5vh 2vw;
+}
+
+.chatbox-container {
+  height: 90vh;
+  width: 75vw;
+  padding-top: 10vh;
+}
+.chat-input {
+  margin-bottom: 0.43rem;
+}
+@media screen and (max-width: 991px) {
+  .chatbox-container {
+    width: 90vw;
+  }
+}
+
+.chatbox-card {
+  height: 100%;
+  border: 0;
+  background-color: transparent !important;
+}
+
+.chatbox-row {
+  height: 100%;
+  margin: 0;
+}
+
+.chat-messages-title {
+  background: linear-gradient(to left, #420000, #ff0000);
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-messages-title > h3 {
+  margin: 0;
+}
+.title-chat {
+  margin-top: 0.4rem;
+  border-radius: 4px;
+}
+.title-question {
+  margin-bottom: 0.4rem;
+  border-radius: 4px;
+}
+.questions {
+  background: rgba(255, 255, 255, 0.06);
+  /* border-radius: 0% 2% 2% 0%; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+.chat-section {
+  background: rgba(255, 255, 255, 0.06);
+  /* border-radius: 2% 0% 0% 2%; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.082);
+  border-radius: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ff0000;
+}
+
+.scrollbar2::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar2::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.082);
+  border-radius: 5px;
+}
+
+.scrollbar2::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.582);
+  border-radius: 5px;
+}
+
+.scrollbar2::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.chat-messages {
+  overflow-y: auto;
+  height: 75%;
+  max-height: 55vh;
+  margin: 1vh 1vw;
+}
+
+.chat-message {
+  margin: 1vh 1vw;
+  color: white;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  width: max-content;
+  max-width: 60%;
+  padding: 1vh 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: appear 0.3s;
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.chat-message p {
+  margin: 0;
+}
+
+.user-message {
+  display: flex;
+  justify-content: right;
+  padding: 0;
+}
+
+.user-message > .chat-message {
+  background-color: #ff0000;
+}
+
+.bot-message > .chat-message {
+  background-color: var(--black);
+}
+
+.questions h1 {
+  color: white;
+  text-align: center;
+  margin: 5vh 2vw;
+}
+
+.questions-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 87%;
+  margin-block: 5vh;
+  margin-inline: 1vw;
+}
+.remove {
+  display: none !important;
+  visibility: hidden !important;
+}
+.question {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 0.5vh 1vw;
+  margin: 1vh 1vw;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.425);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.question:hover {
+  transform: scale(1.04);
+}
+
+.prevent {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+}
+
+.question > button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .chat-messages-title {
+    padding: 0px;
+  }
+
+  .questions {
+    height: 25vh;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .chat-section {
+    height: 40vh;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .questions-container {
+    margin-block: 2vh;
+    height: 40vh;
+  }
+}

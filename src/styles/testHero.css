@@ -1,0 +1,146 @@
+    .test-wrapper
+    {display: flex;
+    flex-direction: row;
+    align-items: normal;
+    justify-content: center;
+    padding: 2rem 0 4rem 0;
+    height: calc(100vh - 8rem);
+    width: 100%;
+    z-index: -4;
+    margin-top: 10vh;
+    
+}
+
+
+    .test-img img{
+        width: auto;
+        height:100%;
+        margin-right: 1.54rem
+    }
+
+
+
+
+
+
+    .test-content h1{
+        font: 400 6.5rem / 1 "Superset";
+        letter-spacing: .015em;
+        text-transform: uppercase;
+        width: 17rem;
+        color: rgb(255, 0, 0);
+    }
+    .test-content p{
+        font: 400 1.5rem / 1.2 "Montserrat";
+        margin-top: .567em;
+        width: 15em;
+        color: white;
+    }
+
+    .test-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 120vh;
+        z-index: -1;
+        filter: blur(0.1rem);
+        /* background-color: black;    */
+        background: rgb(58,58,58);
+        background: linear-gradient(128deg, rgba(58,58,58,1) 0%, rgba(0,0,0,1) 100%);
+
+    }    
+
+    .test-bg img {
+        position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+    transform: scale(1.1);
+    }
+
+    .testhero-buttons {
+        padding-top: 0.7rem;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        margin-top: 1rem;
+            /* padding-left: 8vw; */
+    
+    
+    
+    
+    }
+    
+    .testhero-buttons a{
+        padding-top: 1.7rem;
+        text-decoration: none;
+        background-color: rgb(255, 0, 0);
+        border: 3px solid #ff0000;
+        color: rgb(255, 255, 255);
+        padding: 0.7rem;
+        font-family:"Montserrat";
+    }
+    
+    .testhero-buttons a:hover{  
+        border: 3px solid #ffffff;
+        color: rgb(0, 0, 0);
+        padding: 0.7rem;
+        background-color: rgb(255, 255, 255);
+    
+        
+    
+        
+    }
+
+
+
+    @media only screen and (max-width: 600px) {
+        .test-wrapper
+        {display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding:0;
+        height: fit-content;
+        width: 100vw;
+        margin-top:15vh;
+        
+    }
+    
+        .test-img img{
+            width: auto;
+            height:50vh;
+            /* margin-right: 1.54rem */
+        }
+        .test-content{
+            width:auto;
+            text-align: center;
+        }
+        
+        .test-content h1{
+            font: 400 3.5rem / 1 "Superset";
+            letter-spacing: .015em;
+            text-transform: uppercase;
+            width: 100vw;
+            color: rgb(255, 0, 0);
+            margin-top: 1rem;
+        }
+        .test-content p{
+            font: 400 1.2rem / 1.2 "Montserrat";
+            margin-top: .567em;
+            width: 90vw;
+            color: white;
+            margin-left: 5vw;
+        }
+
+
+
+
+
+
+
+
+
+    }
