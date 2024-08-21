@@ -63,7 +63,7 @@ export const clientsApiSlice = apiSlice.injectEndpoints({
                 { type: 'Client', id: "LIST" }
             ]
         }),
-        updateUser: builder.mutation({
+        updateClient: builder.mutation({
             query: initialUserData => ({
                 url: '/api/clients',
                 method: 'PATCH',
@@ -75,11 +75,10 @@ export const clientsApiSlice = apiSlice.injectEndpoints({
                 { type: 'Client', id: arg.id }
             ]
         }),
-        deleteUser: builder.mutation({
-            query: ({ id }) => ({
-                url: `/api/clients`,
+        deleteClient: builder.mutation({
+            query: (id) => ({
+                url: `/api/clients/${id}`,
                 method: 'DELETE',
-                body: { id }
             }),
             invalidatesTags: (result, error, arg) => [
                 { type: 'Client', id: arg.id }
@@ -97,8 +96,9 @@ export const clientsApiSlice = apiSlice.injectEndpoints({
         }),
         resetWeights : builder.mutation({
             query: () =>({
-                url: `/api/clients/weights`,
-                method: 'DELETE',
+                url: `/api/clients/weights/`,
+                method: 'PATCH',
+               
 
             }),
             invalidatesTags: ['Client' , 'Weight']
@@ -120,7 +120,14 @@ export const clientsApiSlice = apiSlice.injectEndpoints({
                 },
             })
         }),
-        
+        getClientSubscription: builder.query({
+            query: (id) => ({
+                url:  `/api/clients/subscriptions/${id}`,
+                validateStatus: (response, result) => {
+                    return response.status === 200 && !result.isError
+                },
+            })
+        })
         
 
     }),
@@ -135,7 +142,8 @@ export const {
     useLogNewWeightMutation,
     useGetClientDietPlanQuery,
     useGetClientWorkoutPlanQuery,
-    useResetWeightsMutation
+    useResetWeightsMutation,
+    useGetClientSubscriptionQuery
     
 } = clientsApiSlice
 

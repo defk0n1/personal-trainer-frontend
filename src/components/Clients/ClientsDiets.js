@@ -1,11 +1,12 @@
 import {useGetClientDietPlanQuery} from '../../slices/clientsApiSlice'
 import { Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemText,CircularProgress,Box } from '@mui/material';
-
+import { useTranslation } from 'react-i18next';
 
 const ClientsDiets = (id) => {
 
-    console.log(id)
-    
+
+    // console.log(id)
+    const {t} = useTranslation();    
     const { data, isLoading, isError, error } = useGetClientDietPlanQuery(id.data,{refetchOnMountOrArgChange: true});
     const dietData = isLoading ? [] : isError ? error : data.dietPlan[0]
   
@@ -21,16 +22,16 @@ const ClientsDiets = (id) => {
         
         :
         <>
-        <div className="features-title"><h1>DIET PLAN</h1></div>
+        <div className="features-title"><h1>{t("diet-plan")}</h1></div>
 
          <Container maxWidth="lg" >
          <Container sx={{}}>
          
          <Typography variant="h6" sx={{color:"white", marginTop:"4%"}}>
-           Name: {dietData.name}
+           {t("diet-plan-name")}: {dietData.name}
          </Typography>
          <Typography variant="body1"sx={{color:"whitesmoke"}} paragraph>
-           Description: {dietData.description}
+         {t("diet-plan-description")}: {dietData.description}
          </Typography>
    
          
@@ -46,7 +47,7 @@ const ClientsDiets = (id) => {
                    <List>
                      {meal.items.map((item, itemIndex) => (
                        <ListItem key={itemIndex}>
-                         <ListItemText primary={item.name} secondary={`Quantity: ${item.quantity}`} />
+                         <ListItemText primary={item.name} secondary={`${t("quantity")}: ${item.quantity}`} />
                        </ListItem>
                      ))}
                    </List>

@@ -1,10 +1,11 @@
 import {useGetClientWorkoutPlanQuery} from '../../slices/clientsApiSlice'
 import { Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemText,CircularProgress ,Box} from '@mui/material';
-
+import { useTranslation } from 'react-i18next';
 
 const ClientWorkouts= (id) => {
-    
-    console.log(id)
+    const { t } = useTranslation();
+     
+    // console.log(id)
     
     const { data, isLoading, isError, error } = useGetClientWorkoutPlanQuery(id.data,{refetchOnMountOrArgChange: true});
     const workoutData = isLoading ? [] : isError ? error : data.clientWorkoutPlan[0]
@@ -22,15 +23,15 @@ const ClientWorkouts= (id) => {
         
         :
         <>
-        <div className="features-title" style={{marginTop: "2%"}}><h1>WORKOUT PLAN</h1></div>
+        <div className="features-title" style={{marginTop: "2%"}}><h1>{t("workout-plan")}</h1></div>
          <Container maxWidth="lg"  >
 
          <Container sx={{}}>
          <Typography variant="h6" sx={{color:"white" , marginTop:"4%"}}>
-           Name: {workoutData.name}
+           {t("diet-plan-name")}: {workoutData.name}
          </Typography>
          <Typography variant="body1"sx={{color:"whitesmoke"}} paragraph>
-           Description: {workoutData.description}
+         {t("diet-plan-description")}: {workoutData.description}
          </Typography>
    
          

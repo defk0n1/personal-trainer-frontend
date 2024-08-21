@@ -66,8 +66,8 @@ const AddNewWeight = () => {
 
     
 
-    const handleReset = () => {
-      const res = resetWeights().unwrap()
+    const handleReset = async () => {
+       const res = await resetWeights().unwrap()
 
     }
 

@@ -59,7 +59,21 @@
                 "intermediate": "Intermediate",
                 "advanced": "Advanced",
                 "fillOutTheForm": "FILL OUT THE FORM",
-                "requiredField":"This field is required."
+                "requiredField":"This field is required.",
+                "profile-details": "Profile details",
+                "weight-progress":  "Weight progress",
+                "weight-progress-sub":  "Weight progress",
+                "diet-plan":"DIET PLAN",
+                "diet-plan-name":"Name",
+                "diet-plan-description":"Description",
+                "quantity" : "Quantity",
+                "workout-plan" : "WORKOUT PLAN"
+
+
+
+
+
+
 
 
 
@@ -130,7 +144,29 @@
                 "intermediate": "Intermédiaire",
                 "advanced": "Avancé",
                 "fillOutTheForm": "REMPLISSEZ LE FORMULAIRE",
-                "requiredField":"Ce champ est requis."
+                "requiredField":"Ce champ est requis.",
+
+                "profile-details": "Détails du profil",
+                "weight-progress":  "Progression du poids",
+                "weight-progress-sub":  "Un graphique montrant votre progression de poids au fil du temps",
+                "diet-plan":"RÉGIME ALIMENTAIRE",
+                "diet-plan-name":"Nom",
+                "diet-plan-description":"Description",
+                "quantity" : "Quantité",
+
+                "workout-plan" : "PLAN D'ENTRAINEMENT"
+
+                
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -201,7 +237,26 @@
                 "intermediate": "متوسط",
                 "advanced": "متقدم",
                 "fillOutTheForm": "املأ النموذج",
-                "requiredField": "هذا الحقل مطلوب"
+                "requiredField": "هذا الحقل مطلوب",
+                "profile-details": "تفاصيل الملف الشخصي",
+                "weight-progress":  "تقدم الوزن",
+                "weight-progress-sub":  "رسم بياني يظهر تقدم وزنك على مر الزمن",
+                "diet-plan":" النظام الغذائي",
+                "diet-plan-name":"الاسم",
+                "diet-plan-description":"تعليق",
+                "quantity" : "Quantité",
+                "workout-plan" : "خطة التمرين"
+
+
+
+
+
+
+
+
+
+
+                
 
             }
             

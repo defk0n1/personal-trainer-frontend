@@ -54,6 +54,31 @@ export const adminApiSlice = apiSlice.injectEndpoints({
                 { type: 'Client', id: arg.id }
             ]
         }),
+        createSubscription: 
+        builder.mutation({
+            query:  SubscriptionData => ({
+                url: `/api/clients/subscriptions/`,
+                method: 'POST',
+                body: {
+                    ...SubscriptionData,
+                }
+            }),
+            invalidatesTags: (result, error, arg) => [
+                { type: 'Client', id: arg.id }
+            ]
+        }),
+        updateSubscriptionById: builder.mutation({
+            query: initialSubscriptionData => ({
+                url: `/api/clients/subscriptions/`,
+                method: 'PATCH',
+                body: {... initialSubscriptionData},
+                
+            }),
+            invalidatesTags: (result, error, arg) => [
+                { type: 'Client', id: arg.id }
+            ]
+        }),
+       
 
     })
 })
@@ -64,7 +89,9 @@ export const adminApiSlice = apiSlice.injectEndpoints({
         useCreateDietPlanMutation,
         useGetClientWorkoutPlanQuery,
         useUpdateWorkoutPlanByIdMutation,
-        useCreateWorkoutPlanMutation
+        useCreateWorkoutPlanMutation,
+        useCreateSubscriptionMutation,
+        useUpdateSubscriptionByIdMutation
 
        
     } = adminApiSlice

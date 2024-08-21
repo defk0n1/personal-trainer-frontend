@@ -1,9 +1,13 @@
 import { Container, Grid, Paper, Box, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 
 
 
 const ClientDetails = ({ clientData }) => {
+      
+    const {t} = useTranslation();
+
 
     const selectedKeys = ["active"
         ,"age"
@@ -14,7 +18,8 @@ const ClientDetails = ({ clientData }) => {
         , "level"
         , "medicalCondition" 
         , "numofMeals"
-        , "supplement" 
+        , "supplement" ,
+        "password"
      ]
 
      const displayKeys = {
@@ -28,6 +33,7 @@ const ClientDetails = ({ clientData }) => {
         medicalCondition:"Medical conditions"   ,
         numofMeals:"# of meals",
         supplement:"Use of supplements",
+        password:"Password"
 
      }
 
@@ -46,7 +52,7 @@ const ClientDetails = ({ clientData }) => {
         
     }}
     >
-        <Typography variant="h4" style={{color:"red" , marginBottom:"5%"}}>Profile details</Typography>
+        <Typography variant="h4" style={{color:"red" , marginBottom:"5%"}}>{t("profile-details")}</Typography>
 
     
       <Grid container spacing={2}>
@@ -56,7 +62,7 @@ const ClientDetails = ({ clientData }) => {
               <Grid  item xs={5} sm={6} key={key}>
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                   <Typography variant="subtitle1" fontWeight={700}>
-                    {displayKeys[key]}:
+                    {t(`${key}`)}:
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
                     {value}

@@ -3,10 +3,14 @@ import { LineChart } from '@mui/x-charts';
 import AddNewWeight from './AddNewWeight.js';
 import dayjs from "dayjs";
 import { Paper, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 
 
 const ClientWeights = (data) => {
+
+
+    const {t} = useTranslation(); 
     const weightLogs = data.data
     console.log(weightLogs)
     const dateAxis =[]
@@ -37,8 +41,8 @@ const ClientWeights = (data) => {
       height:'80vh'
     }}
   >
-<Typography variant="h4" sx={{color:"red",marginBottom:"5%"}}>Weight Progress</Typography>
-<Typography style={{color:"grey"}}>A graph showing your weight progress over time.</Typography>
+<Typography variant="h4" sx={{color:"red",marginBottom:"5%"}}>{t("weight-progress")}</Typography>
+<Typography style={{color:"grey"}}>{t("weight-progress-sub")}</Typography>
 <div style={{height:"70%"}}>
 <LineChart
   xAxis={[{

@@ -8,6 +8,8 @@ import ClientDetails from "../components/Clients/ClientDetails";
 import ClientWorkouts from "../components/Clients/ClientWorkouts";
 
 import { ThemeProvider, createTheme } from '@mui/material/styles'
+import ErrorPage from "./ErrorPage"
+
 
 
 import { Container, Grid, Paper, Box, Typography,CircularProgress } from '@mui/material';
@@ -68,7 +70,7 @@ const  ClientProfile = () => {
         <Navbar></Navbar>
         {isLoading ? <Box sx={{ display: 'flex', alignItems:"center" ,  justifyContent:"center" ,flexDirection:"column", height:"90vh"}}>
       <CircularProgress />
-    </Box>: isError ? error :
+    </Box>: isError ? <ErrorPage data={error}/> :
         <ThemeProvider theme={THEME}>
 
         <div style={{backgroundColor: "#18181a", paddingTop:"10vh", paddingBottom:"10vh"}}>

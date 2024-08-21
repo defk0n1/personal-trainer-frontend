@@ -5,6 +5,8 @@ import Navbar from "../Home/Navbar.js"
 import { useState } from "react"
 import DietOptions from "../Admin/Diet/DietOptions.js"
 import WorkoutOptions from "../Admin/Workout/WorkoutOptions.js"
+import SubscriptionOptions from "../Admin/Subscription/SubscriptionOptions.js"
+import ClientOptions from "../Clients/ClientOptions.js"
 
 
 const ClientsList = () => {
@@ -35,7 +37,7 @@ const ClientsList = () => {
         {field:"foodtoAvoid",headerName:"Food to avoid", width:100},
         {field:"supplement" ,headerName:"Supps?", width:100},
         {field:"comment",headerName:"Comment", width:100},
-        {field:"phoneNumber", headerName:"Phone Number", width:100},
+        {field:"password", headerName:"Phone Number", width:100},
         {field:"workoutPlan" ,headerName:"Workout Plan", width:100 ,renderCell : (params) => <WorkoutOptions id={(params.row)}/> },
         {field:"dietPlan",headerName:" Diet Plan", width:100 , renderCell : (params) => <DietOptions id={(params.row)}/> } ,
         {field:"createdAt", headerName:"Created At", width:100 , valueGetter: (value) => {
@@ -45,7 +47,9 @@ const ClientsList = () => {
             return value.substring(0,10)
         }
         },
-        // {field:"id",headerName:"ID", width:100}
+        {field:"subscription",headerName:"PAYMENT", width:100 , renderCell : (params) => <SubscriptionOptions id={(params.row)}/>},
+        {field:"options",headerName:"", width:100 , renderCell : (params) => <ClientOptions id={(params.row)}/>}
+
     ]
     // const content = (<>
     //     {isLoading ? 'Loading...' : isError ? 
