@@ -5,7 +5,7 @@ import StaticCarousel from '../components/Home/StaticCarousel'
 import Features from '../components/Home/Features';
 import '../styles/Navbar.css';
 import VideoSection from '../components/Home/Videosection';
-import Faq from '../components/Home/Faq';
+import Footer from '../components/Home/Footer';
 import Prices from '../components/Home/Prices';
 import Hero2 from '../components/Home/Hero2'
 import 'react-toastify/ReactToastify.css'
@@ -25,7 +25,8 @@ function Homepage() {
     <StaticCarousel></StaticCarousel>
     <Features></Features>
     <Prices></Prices>
-    <Faq></Faq>
+    {/* <Faq></Faq> */}
+    <Footer></Footer>
 
     
     

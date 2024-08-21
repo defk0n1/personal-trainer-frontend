@@ -78,13 +78,8 @@ function VideoSection(){
     return(
         <div className="video-container">
             <div className="video-wrapper">
-            {/* <video width="40vw" height="" autoPlay >
-
-            <source src="/videos/video1.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-</video> */}
+          
             <Video>
-
             </Video>
             </div>
             <div className="video-sub">

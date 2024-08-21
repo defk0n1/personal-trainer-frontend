@@ -1,5 +1,3 @@
-import { px } from "framer-motion";
-import { Player, BigPlayButton , LoadingSpinner , ControlBar , PlayToggle , VolumeMenuButton} from "video-react";
 
 
 const Video = () => {
@@ -9,21 +7,9 @@ const Video = () => {
 
 
     return(
-        <Player src="/videos/video1.mp4" fluid={false} width={isMobile() ? "80%" : "50%"} height={"90%"}>
-                  <BigPlayButton position="center" />
-                  {/* <ControlBar autoHide={false}>
-                         <VolumeMenuButton />
-                         <PlayToggle />
-
-
-
-
-
-                  </ControlBar>
- */}
-
-
-        </Player>
+        <video width={isMobile() ? "80%" : "50%"} height={"90%"} controls>
+           <source  src="/videos/video1.mp4" type="video/mp4"/>
+        </video>
     )
 
 }
