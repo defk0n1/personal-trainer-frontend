@@ -44,7 +44,7 @@ margin-top: 10vh;
     width: 100vw;
     height: 120vh;
     z-index: -1;
-    filter: blur(0.1rem);
+    filter: blur(0.6rem);
     /* background-color: black;    */
     background: rgb(58,58,58);
     background: linear-gradient(128deg, rgba(58,58,58,1) 0%, rgba(0,0,0,1) 100%);

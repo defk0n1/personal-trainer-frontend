@@ -9,15 +9,29 @@ import Footer from '../components/Home/Footer';
 import Prices from '../components/Home/Prices';
 import Hero2 from '../components/Home/Hero2'
 import 'react-toastify/ReactToastify.css'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Preloader from '../components/Home/Preloader';
+import { Suspense } from 'react';
 
 
 
 
 function Homepage() {
-  return (
-    <>
-        <Navbar bookpage={false}></Navbar>
 
+  const [screenLoading, setScreenLoading] = useState(true);
+
+  useEffect(() => {
+    
+      setTimeout(()=>{
+        setScreenLoading(false);
+
+      },4000)
+    
+  }, []);
+  return (screenLoading ? <Preloader/> : <>  
+    
+    <Navbar bookpage={false}></Navbar>
     <Hero2/>
     {/* <Hero></Hero> */}
     <VideoSection></VideoSection>
@@ -28,7 +42,6 @@ function Homepage() {
     {/* <Faq></Faq> */}
     <Footer></Footer>
 
-    
     
     </>
   );
