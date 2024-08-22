@@ -29,9 +29,7 @@ function Features(){
 
                             <p>{t("workout-body-1")}
                             <br />
-                            <br />
-
-{t("workout-body-2")}</p>
+                          </p>
                            
                             <div className="features-icons">
                                 <div className="feature-icon">
@@ -66,10 +64,7 @@ function Features(){
                             {t("food-body-1")}
                             </p>                     
                             <br />
-                            <br />
-                            <p>
-                                {t("food-body-2")}
-                            </p>
+                         
                             <div className="features-icons">
                                 <div className="feature-icon">
                                     <img src={swap}></img>
