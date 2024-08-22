@@ -25,13 +25,12 @@ function Homepage() {
     
       setTimeout(()=>{
         setScreenLoading(false);
-
       },4000)
     
   }, []);
-  return (screenLoading ? <Preloader/> : <>  
-    
-    <Navbar bookpage={false}></Navbar>
+  return ( <>
+    {screenLoading && <Preloader/> }
+    {!screenLoading &&<Navbar bookpage={false}></Navbar>}
     <Hero2/>
     {/* <Hero></Hero> */}
     <VideoSection></VideoSection>
