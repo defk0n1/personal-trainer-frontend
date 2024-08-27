@@ -11,7 +11,13 @@
 .price-image{
     width: 100%;
     height: 100%;
-    background-color: red;
+
+
+}
+.price-image img{
+    width: 100%;
+    height: calc(70vh + 4rem);
+    object-fit: contain;
 
 
 }
@@ -21,22 +27,22 @@
     background-position: 0 0, 0 0;
     background-size: auto, 50px;
     background-color: rgb(34, 34, 34);
-    height:50vh;
+    height:60vh;
     border: 1px solid rgba(255, 255, 255, .1);
     border-radius: 16px;
     padding: 2rem;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     display: flex;
     position: relative;
     font-family: "Montserrat";
-    height: fit-content;
+    align-self: center;
 
 }
 
 .price-wrapper h1{
     letter-spacing: -.02em;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 400;
     line-height: 1.2;
     color: rgb(255, 0, 0);
@@ -44,10 +50,11 @@
 }
 
 .price-wrapper p{
-    color: rgb(221, 221, 221);
+    color: rgb(127, 127, 127);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
+    font-family: "Poppins";
 }
 
 .price-wrapper hr{
@@ -68,7 +75,7 @@
 
 
 .price-button{
-    padding-top: 1.7rem;
+    padding-top: 1rem;
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
@@ -81,7 +88,7 @@
     color: rgb(255, 255, 255);
     padding: 0.7rem;
     font-family:"Superset";
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
 .price-button a:hover{  
@@ -102,8 +109,10 @@
         grid-template-columns: 1fr;
     }
     .price-image{
-        height:50vh
-    }
+        width: 100%;
+        height: calc(70vh + 4rem);
+        object-fit: contain;    }
+    
     .price-wrapper {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
