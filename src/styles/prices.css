@@ -46,7 +46,7 @@
     font-weight: 400;
     line-height: 1.2;
     color: rgb(255, 0, 0);
-    font-family: "Superset";
+    font-family: "Bebas Neue";
 }
 
 .price-wrapper p{
@@ -69,7 +69,7 @@
     line-height: 1.1;
     color: rgb(255, 0, 0);
     margin-bottom: 1rem;
-    font-family: "Superset";
+    font-family: "Bebas Neue";
 
 }
 
@@ -87,7 +87,7 @@
     border: 3px solid #ff0000;
     color: rgb(255, 255, 255);
     padding: 0.7rem;
-    font-family:"Superset";
+    font-family:"Bebas Neue";
     font-size: 1rem;
 }
 

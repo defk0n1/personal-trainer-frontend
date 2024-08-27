@@ -103,7 +103,7 @@ useEffect(() => {
                 <div className="row chatbox-row">
                     <div className="col-12 col-md-6 chat-section d-flex flex-column justify-content-between">
                         <div className="chat-messages-title title-chat">
-                            <h3 style= {{color: "white", fontFamily: 'Superset',
+                            <h3 style= {{color: "white", fontFamily: 'Bebas Neue',
     fontWeight: 400, fontSize:'3rem'}}>CHAT</h3>
                         </div>
                         <div className="chat-messages scrollbar">
@@ -132,7 +132,7 @@ useEffect(() => {
                         }
                         </div>
                         <div className="chat-messages-title title-question">
-                            <h3 style={{color: "white", fontFamily: 'Superset',
+                            <h3 style={{color: "white", fontFamily: 'Bebas Neue',
     fontWeight: 400, fontSize:'3rem'}}>QUESTIONS</h3>
                         </div>
                     </div>

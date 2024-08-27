@@ -20,7 +20,7 @@ const Footer = () => {
         border: '3px solid #ff0000',
         color: 'white',
         padding: '0.7rem',
-        fontFamily: '"Superset"',
+        fontFamily: '"Bebas Neue"',
         fontSize: '1.6rem',
         width:"15%",
         textAlign:"center"
