@@ -33,7 +33,7 @@ export default function Carousel(){
       <div className="carousel-wrapper"> 
         <div className="carousel-title"><h1>{t("transformations-title")}</h1></div>
 
-      <Canvas camera={{ position: [0, 0, 10], fov: fieldofView }} style={{height: '80vh'}} frameloop="demand">
+      <Canvas camera={{ position: [0, 0, 10], fov: fieldofView }} style={{height: '80vh'}} >
     <color attach="background" args={["black"]} />
     <fog attach="fog" args={['#ff0000', 8.5, 12]} />
     <ScrollControls pages={4} horizontal={true} style={{ scrollbarWidth:'none' }} infinite >
