@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 
 import { useTranslation } from "react-i18next";
-import hero from "../../assets/heroo2.jpeg"
+import hero from "../../assets/heroo2-1.jpeg"
 import {Link} from "react-router-dom"
 
 const HeroCard = () => {

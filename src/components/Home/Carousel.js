@@ -11,12 +11,10 @@ import { useTranslation } from 'react-i18next'
 
 import './util'
 
-const isMobile = () => {
-  const minWidth = 768; // Minimum width for desktop devices
-  return window.innerWidth < minWidth ;
-}
+const isMobile = window.innerWidth < 768 ;
 
-const fieldofView = isMobile ? 15 : 10;
+
+const fieldofView = isMobile ? 30 : 15;
 
 
 
@@ -27,7 +25,7 @@ export default function Carousel(){
 
   const {t} = useTranslation();
 
-  if (isMobile()){
+  if (isMobile){
 
     return(
       <div className="carousel-wrapper"> 

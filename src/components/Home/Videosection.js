@@ -21,8 +21,8 @@ function VideoSection(){
             trigger: ".video-container",
             markers: false,
             start: "-10% top",
-            end: "-5% top",
-            scrub: 5,}});
+            end: "-1% top",
+            scrub: 1,}});
         tl.from(".div2", {
             opacity:0,
             duration:1,

@@ -107,14 +107,18 @@
         grid-column-gap: 2rem;
         grid-row-gap: 2rem;
         grid-template-columns: 1fr;
+        height:fit-content
     }
-    .price-image{
+    .price-image img{
         width: 100%;
-        height: calc(70vh + 4rem);
-        object-fit: contain;    }
+        height: calc(40vh + 4rem);
+        object-fit: contain;  
+    margin-top: 4%;
+margin-bottom: 4%;  }
     
     .price-wrapper {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        height:fit-content;
     }
 }

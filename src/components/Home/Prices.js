@@ -12,24 +12,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 gsap.registerPlugin(ScrollTrigger);
-const isMobile = window.innerWidth <=767
+const isMobile = window.innerWidth <= 767
 
 
 
 const Prices = () => {
-    const scrubValue  = isMobile ? 0 : 1
+
     const {t} = useTranslation();
-    useGSAP(()=>{
+    useGSAP(()=>{ if (!isMobile){
         var tl = gsap.timeline({scrollTrigger: {
             trigger: ".prices-wrapper",
             markers: false,
             start: "-10% top",
             end: "30% bottom",
-            scrub: scrubValue,}});
+            }});
         tl.from("#price1", {
-            opacity:0,
+            opacity:0.5,
             duration:1,
-            xPercent:-30,
+            xPercent:-60,
             ease:'power1'
 
 
@@ -38,12 +38,12 @@ const Prices = () => {
             trigger: "#price2",
             markers: false,
             start: "-30% top",
-            end: "100% bottom",
-            scrub: scrubValue,}});
+            end: "bottom bottom",
+            }});
         tl2.from("#price2", {
-            opacity:0,
+            opacity:0.5,
             duration:1,
-            xPercent:30,
+            xPercent:60,
             ease:'power1'
 
 
@@ -52,16 +52,21 @@ const Prices = () => {
             trigger: "#price3",
             markers: false,
             start: "-30% top",
-            end: "100% bottom",
-            scrub: scrubValue,}});
+            end: "bottom bottom",
+            }});
         tl3.from("#price3", {
-            opacity:0,
+            opacity:0.5,
             duration:1,
-            xPercent:-30,
+            xPercent:-60,
             ease:'power1'
 
 
-        });
+        })
+
+    }else{
+        
+    }
+        ;
     });
     return (<>
         <div className="features-title">
