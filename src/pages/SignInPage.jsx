@@ -1,6 +1,6 @@
 import { useState, useEffect} from "react";
 import "../styles/signinpage.css"
-import Navbar from "../components/Home/Navbar.js";
+import Navbar from "../components/Home/Navbar.jsx";
 import bg from "../assets/FIREFORCE-4.png"
 
 import { Link , useNavigate } from 'react-router-dom'

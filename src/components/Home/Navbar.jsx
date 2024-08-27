@@ -5,7 +5,7 @@ import {Link, useNavigate} from "react-router-dom"
 import { useSelector , useDispatch } from 'react-redux';
 import { useLogoutMutation } from '../../slices/authApiSlice.js';
 import { logout } from '../../slices/authSlice.js';
-import LangSelector from './LangSelector';
+import LangSelector from './LangSelector.jsx';
 
 export default function Navbar(props) {
     // const toggleButton = document.getElementsByClassName('toggle-button')[0];

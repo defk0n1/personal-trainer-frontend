@@ -1,7 +1,7 @@
 import { Button , Box , Typography , Modal } from '@mui/material'
 import { useState } from 'react'
-import ClientDetails from './ClientDetails.js'
-import {useDeleteClientMutation} from '../../slices/clientsApiSlice'
+import ClientDetails from './ClientDetails.jsx'
+import {useDeleteClientMutation} from '../../slices/clientsApiSlice.js'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/ReactToastify.css'
 

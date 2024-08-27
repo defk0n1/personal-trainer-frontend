@@ -9,8 +9,8 @@ import {
   Box
 } from '@mui/material';
 
-import Navbar from '../components/Home/Navbar.js';
-import SignUpForm from '../components/SignUp/SignUpForm';
+import Navbar from '../components/Home/Navbar.jsx';
+import SignUpForm from '../components/SignUp/SignUpForm.jsx';
 import { useTranslation } from 'react-i18next';
 
 const Test = () => {

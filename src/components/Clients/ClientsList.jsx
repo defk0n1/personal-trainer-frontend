@@ -1,12 +1,12 @@
 import { Box, Typography, Container } from "@mui/material"
 import { DataGrid } from "@mui/x-data-grid"
 import { useGetClientsQuery } from "../../slices/clientsApiSlice.js"
-import Navbar from "../Home/Navbar.js"
+import Navbar from "../Home/Navbar.jsx"
 import { useState } from "react"
-import DietOptions from "../Admin/Diet/DietOptions.js"
-import WorkoutOptions from "../Admin/Workout/WorkoutOptions.js"
-import SubscriptionOptions from "../Admin/Subscription/SubscriptionOptions.js"
-import ClientOptions from "../Clients/ClientOptions.js"
+import DietOptions from "../Admin/Diet/DietOptions.jsx"
+import WorkoutOptions from "../Admin/Workout/WorkoutOptions.jsx"
+import SubscriptionOptions from "../Admin/Subscription/SubscriptionOptions.jsx"
+import ClientOptions from "../Clients/ClientOptions.jsx"
 
 
 const ClientsList = () => {

@@ -2,19 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {Routes ,Route , BrowserRouter} from 'react-router-dom'
 import './index.css';
-import Homepage from './pages/Homepage';
-import ClientsList from './components/Clients/ClientsList.js'
+import Homepage from './pages/Homepage.jsx';
+import ClientsList from './components/Clients/ClientsList.jsx'
 
 
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals.js';
 import "./i18n.js";
 
 import store from './store.js';
 import { Provider } from 'react-redux';
-import ClientProfile from './pages/ClientProfile';
-import PersistLogin from './pages/PersistLogin.js';
-import SignInPage from './pages/SignInPage.js';
-import Test from './pages/test.js';
+import ClientProfile from './pages/ClientProfile.jsx';
+import PersistLogin from './pages/PersistLogin.jsx';
+import SignInPage from './pages/SignInPage.jsx';
+import Test from './pages/test.jsx';
 
 
 

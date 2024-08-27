@@ -1,6 +1,6 @@
 
 import { LineChart } from '@mui/x-charts';
-import AddNewWeight from './AddNewWeight.js';
+import AddNewWeight from './AddNewWeight.jsx';
 import dayjs from "dayjs";
 import { Paper, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
