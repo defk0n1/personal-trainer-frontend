@@ -25,7 +25,7 @@ function Homepage() {
     
       setTimeout(()=>{
         setScreenLoading(false);
-      },4000)
+      },2000)
     
   }, []);
   return ( <>
