@@ -12,10 +12,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 gsap.registerPlugin(ScrollTrigger);
+const isMobile = window.innerWidth <=767
 
 
 
 const Prices = () => {
+    const scrubValue  = isMobile ? 0 : 1
     const {t} = useTranslation();
     useGSAP(()=>{
         var tl = gsap.timeline({scrollTrigger: {
@@ -23,7 +25,7 @@ const Prices = () => {
             markers: false,
             start: "-10% top",
             end: "30% bottom",
-            scrub: 1,}});
+            scrub: scrubValue,}});
         tl.from("#price1", {
             opacity:0,
             duration:1,
@@ -37,7 +39,7 @@ const Prices = () => {
             markers: false,
             start: "-30% top",
             end: "100% bottom",
-            scrub: 1,}});
+            scrub: scrubValue,}});
         tl2.from("#price2", {
             opacity:0,
             duration:1,
@@ -51,7 +53,7 @@ const Prices = () => {
             markers: false,
             start: "-30% top",
             end: "100% bottom",
-            scrub: 1,}});
+            scrub: scrubValue,}});
         tl3.from("#price3", {
             opacity:0,
             duration:1,
