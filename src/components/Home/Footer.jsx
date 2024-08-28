@@ -21,8 +21,8 @@ const Footer = () => {
         color: 'white',
         padding: '0.7rem',
         fontFamily: '"Bebas Neue"',
-        fontSize: '1.6rem',
-        width:"15%",
+        fontSize: '1.2rem',
+        width:"20%",
         textAlign:"center"
        
       };
