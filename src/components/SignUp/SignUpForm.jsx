@@ -113,7 +113,7 @@ const navigate = useNavigate()
 
       
     } catch (err) {
-      toast.error(err?.data?.message || err.error)
+      toast.error("Check fields")
 
 
       

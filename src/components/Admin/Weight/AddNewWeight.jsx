@@ -4,8 +4,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import dayjs from "dayjs";
 import { Button, Input } from "@mui/material";
-import { useLogNewWeightMutation } from '../../slices/clientsApiSlice.js';
-import { useResetWeightsMutation } from '../../slices/clientsApiSlice.js';
+import { useLogNewWeightMutation } from '../../../slices/clientsApiSlice.js';
+import { useResetWeightsMutation } from '../../../slices/clientsApiSlice.js';
 
 import { createTheme, ThemeProvider  } from '@mui/material/styles';
 
@@ -31,13 +31,14 @@ const themeOptions = createTheme({
 
 
 
-const AddNewWeight = () => {
+const AddNewWeight = ({id}) => {
     const today = new Date()
     const [value, setValue] = useState(dayjs(today));
     const [weight , setWeight] = useState(null)
     const [logNewWeight] = useLogNewWeightMutation()
     const [resetWeights] = useResetWeightsMutation()
 
+    console.log(id)
 
 
     const handleDatePick = (newDate) => {   
@@ -52,7 +53,10 @@ const AddNewWeight = () => {
       if(!date || !weight){
         throw new Error("All fields required");
       }
-      const res = logNewWeight({date , weight}).unwrap()
+      const newWeight = {date , weight}
+
+      console.log({id , ...newWeight})
+      const res = logNewWeight({id , ...newWeight}).unwrap()
       setValue(dayjs(today))
       setWeight(null)
       
@@ -67,7 +71,7 @@ const AddNewWeight = () => {
     
 
     const handleReset = async () => {
-       const res = await resetWeights().unwrap()
+       const res = await resetWeights(id).unwrap()
 
     }
 

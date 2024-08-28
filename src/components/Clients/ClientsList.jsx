@@ -7,6 +7,7 @@ import DietOptions from "../Admin/Diet/DietOptions.jsx"
 import WorkoutOptions from "../Admin/Workout/WorkoutOptions.jsx"
 import SubscriptionOptions from "../Admin/Subscription/SubscriptionOptions.jsx"
 import ClientOptions from "../Clients/ClientOptions.jsx"
+import WeightOptions from "../Admin/Weight/WeightOptions.jsx"
 
 
 const ClientsList = () => {
@@ -40,6 +41,8 @@ const ClientsList = () => {
         {field:"password", headerName:"Phone Number", width:100},
         {field:"workoutPlan" ,headerName:"Workout Plan", width:100 ,renderCell : (params) => <WorkoutOptions id={(params.row)}/> },
         {field:"dietPlan",headerName:" Diet Plan", width:100 , renderCell : (params) => <DietOptions id={(params.row)}/> } ,
+        {field:"weights",headerName:"Weights", width:100 , renderCell : (params) => <WeightOptions id={(params.row)}/>},
+
         {field:"createdAt", headerName:"Created At", width:100 , valueGetter: (value) => {
             return value.substring(0,10)
         }},
@@ -48,7 +51,8 @@ const ClientsList = () => {
         }
         },
         {field:"subscription",headerName:"PAYMENT", width:100 , renderCell : (params) => <SubscriptionOptions id={(params.row)}/>},
-        {field:"options",headerName:"", width:100 , renderCell : (params) => <ClientOptions id={(params.row)}/>}
+        {field:"options",headerName:"", width:100 , renderCell : (params) => <ClientOptions id={(params.row)}/>},
+
 
     ]
     // const content = (<>

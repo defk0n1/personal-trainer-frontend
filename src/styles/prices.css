@@ -113,8 +113,9 @@
         width: 100%;
         height: calc(40vh + 4rem);
         object-fit: contain;  
-    margin-top: 4%;
-margin-bottom: 4%;  }
+        margin-top: 4%;
+        margin-bottom: 4%; 
+     }
     
     .price-wrapper {
         padding-left: 1.5rem;

@@ -86,17 +86,17 @@ export const clientsApiSlice = apiSlice.injectEndpoints({
         }),
         logNewWeight : builder.mutation({
             query: (newWeight) =>({
-                url: `/api/clients/weights`,
+                url: `/api/clients/weights/${newWeight.id}`,
                 method: 'POST',
-                body: newWeight
+                body:newWeight
 
             }),
             invalidatesTags: ['Client' , 'Weight']
 
         }),
         resetWeights : builder.mutation({
-            query: () =>({
-                url: `/api/clients/weights/`,
+            query: (id) =>({
+                url: `/api/clients/weights/${id}`,
                 method: 'PATCH',
                
 

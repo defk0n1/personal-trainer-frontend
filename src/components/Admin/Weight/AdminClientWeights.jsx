@@ -1,19 +1,21 @@
 
 import { LineChart } from '@mui/x-charts';
+import AddNewWeight from './AddNewWeight.jsx';
 import dayjs from "dayjs";
 import { Paper, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 
 
-const ClientWeights = (data) => {
+const AdminClientWeights = ({data , id}) => {
 
 
     const {t} = useTranslation(); 
-    const weightLogs = data.data
+    const weightLogs = data
     console.log(weightLogs)
     const dateAxis =[]
     const weightAxis =[]
+    console.log(`current client id is ${id}`)
 
 
     if(weightLogs){
@@ -63,9 +65,10 @@ const ClientWeights = (data) => {
   title='Weight progress'
   />
   </div>
+<AddNewWeight id={id}/>
 </Paper>
 
   )
 }
 
-export default ClientWeights
+export default AdminClientWeights
