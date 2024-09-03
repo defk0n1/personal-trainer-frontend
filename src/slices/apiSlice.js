@@ -3,6 +3,8 @@ import { setCredentials } from './authSlice';
 
 const baseQuery = fetchBaseQuery({
     baseUrl: 'https://personal-trainer-backend-dwwf.onrender.com',
+    // baseUrl: 'http://localhost:5000',
+
     credentials: 'include',
     prepareHeaders:(headers, {getState}) => {
         const token = getState().auth.token

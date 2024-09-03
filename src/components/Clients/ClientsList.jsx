@@ -41,7 +41,7 @@ const ClientsList = () => {
         {field:"password", headerName:"Phone Number", width:100},
         {field:"workoutPlan" ,headerName:"Workout Plan", width:100 ,renderCell : (params) => <WorkoutOptions id={(params.row)}/> },
         {field:"dietPlan",headerName:" Diet Plan", width:100 , renderCell : (params) => <DietOptions id={(params.row)}/> } ,
-        {field:"weights",headerName:"Weights", width:100 , renderCell : (params) => <WeightOptions id={(params.row)}/>},
+        {field:"weights",headerName:"Weights", width:100 , renderCell : (params) => <WeightOptions id={params.row}/>},
 
         {field:"createdAt", headerName:"Created At", width:100 , valueGetter: (value) => {
             return value.substring(0,10)
