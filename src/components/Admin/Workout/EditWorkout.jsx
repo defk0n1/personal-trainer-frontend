@@ -11,13 +11,15 @@ const EditWorkout= ({id}) => {
         name: "",
         description: "",
         days: [
-        ]
+        ],
       };
 
       console.log(id)
   const { data, isLoading, isError, isSuccess,error } = useGetClientWorkoutPlanQuery(id,{refetchOnMountOrArgChange: true});
   const [updateWorkout] = useUpdateWorkoutPlanByIdMutation()
   const workoutData = isLoading ? [] : isError ? error : isSuccess ? data.clientWorkoutPlan[0] : null 
+
+  console.log(workoutData)
 
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState(initWorkoutPlan);
@@ -101,7 +103,7 @@ const EditWorkout= ({id}) => {
   const handleAddDay = () => {
     const newDay = {
       day: "",
-      exercises: [{ name: "",sets:"", reps: "" ,rest:""}],
+      exercises: [{ name: "",sets:"", reps: "" ,rest:"",vidId:""}],
     };
     setEditData({
       ...editData,
@@ -110,7 +112,7 @@ const EditWorkout= ({id}) => {
   };
 
   const handleAddExercise = (dayIndex) => {
-    const newExercise = { name: "",sets:"", reps: "" ,rest:""};
+    const newExercise = { name: "",sets:"", reps: "" ,rest:"",vidId:""};
     const updatedDays = editData.days.map((day, index) => {
       if (index === dayIndex) {
         return { ...day, exercises: [...day.exercises, newExercise] };
@@ -153,6 +155,9 @@ const EditWorkout= ({id}) => {
     return exercise.name.trim() !== "" && exercise.reps.trim() !== "" && exercise.sets.trim() !== "" && exercise.rest.trim() !== "";
   };
 
+  const showExerciceModal = (vidId) => {
+
+  }
   
   const innerContent = (<>
         {isLoading ?    <Box sx={{ display: 'flex', alignItems:"center" ,  justifyContent:"center" ,flexDirection:"column", height:"90%"}}>
@@ -279,6 +284,13 @@ const EditWorkout= ({id}) => {
                               value={exercise.rest}
                               onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
                             />
+                            <TextField
+                              fullWidth
+                              label="Vid"
+                              name="vidId"
+                              value={exercise.vidId}
+                              onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
+                            />
                             <Button
                               variant="contained"
                               color="error"
@@ -288,8 +300,8 @@ const EditWorkout= ({id}) => {
                               Remove Exercise
                             </Button>
                           </>
-                        ) : (
-                          <ListItemText primary={exercise.name} secondary={`Sets: ${exercise.sets} - Reps: ${exercise.reps} - Rest: ${exercise.rest}`} />
+                        ) : (  
+                          <ListItemText primary={exercise.name} secondary={`Sets: ${exercise.sets} - Reps: ${exercise.reps} - Rest: ${exercise.rest} - VidID : ${exercise.vidId}` } /> 
                         )}
                       </ListItem>
                     ))}

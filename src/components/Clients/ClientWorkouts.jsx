@@ -1,6 +1,7 @@
 import {useGetClientWorkoutPlanQuery} from '../../slices/clientsApiSlice'
 import { Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemText,CircularProgress ,Box} from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import WorkoutVideoModal from './WorkoutVideoModal';
 
 const ClientWorkouts= (id) => {
     const { t } = useTranslation();
@@ -10,6 +11,7 @@ const ClientWorkouts= (id) => {
     const { data, isLoading, isError, error } = useGetClientWorkoutPlanQuery(id.data,{refetchOnMountOrArgChange: true});
     const workoutData = isLoading ? [] : isError ? error : data.clientWorkoutPlan[0]
   
+    console.log(workoutData)
     const content = (<>
         {isLoading ?<Box sx={{ display: 'flex', alignItems:"center" ,  justifyContent:"center" ,flexDirection:"column", height:"90%"}}>
       <CircularProgress />
@@ -47,7 +49,8 @@ const ClientWorkouts= (id) => {
                    <List>
                      {day.exercises.map((exercise, exerciseIndex) => (
                        <ListItem key={exerciseIndex}>
-                         <ListItemText primary={exercise.name} secondary={`Sets: ${exercise.sets} - Reps: ${exercise.reps} - Rest: ${exercise.rest}`} />
+                         <ListItemText primary={exercise.name} secondary={`Sets: ${exercise.sets} - Reps: ${exercise.reps} - Rest: ${exercise.rest} - VidId: ${exercise.vidId}`} />
+                         <WorkoutVideoModal vidId = {exercise.vidId}/>
                        </ListItem>
                      ))}
                    </List>

@@ -88,7 +88,7 @@ const CreateWorkout= ({id}) => {
   const handleAddDay = () => {
     const newDay = {
       day: "",
-      exercises: [{ name: "",sets:"", reps: "" ,rest:""}],
+      exercises: [{ name: "",sets:"", reps: "" ,rest:"",vidId:""}],
     };
     setEditData({
       ...editData,
@@ -97,7 +97,7 @@ const CreateWorkout= ({id}) => {
   };
 
   const handleAddExercise = (dayIndex) => {
-    const newExercise = { name: "",sets:"", reps: "" ,rest:""};
+    const newExercise = { name: "",sets:"", reps: "" ,rest:"",vidId:""};
     const updatedDays = editData.days.map((day, index) => {
       if (index === dayIndex) {
         return { ...day, exercises: [...day.exercises, newExercise] };
@@ -233,6 +233,13 @@ const CreateWorkout= ({id}) => {
                               fullWidth
                               label="Rest"
                               name="rest"
+                              value={exercise.rest}
+                              onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
+                            />
+                             <TextField
+                              fullWidth
+                              label="vidId"
+                              name="vidId"
                               value={exercise.rest}
                               onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
                             />
