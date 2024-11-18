@@ -73,12 +73,12 @@ export default function Navbar(props) {
         <div className="navbarr">
             <div className={menuOpen ? "navlogo-mobile":"navlogo"}><Link to="/"><img src={logo} alt="" ></img></Link></div>
         <div className={menuOpen ? "navlist-mobile":"navlist"}>
-            {/* <div className={menuOpen ? "navli-mobile":"navli"}><a href="">HOME</a></div>
-            <div className={menuOpen ? "navli-mobile":"navli"}><a href="">ABOUT</a></div> */}
+            <div className={menuOpen ? "navli-mobile":"navli"}><a href="">HOME</a></div>
+            {/* <div className={menuOpen ? "navli-mobile":"navli"}><a href="">ABOUT</a></div> */}
             <div className={menuOpen ? "navli-mobile":"navli"} style={token ? {} : {display:'none'}}><Link to="/profile">{token ? "PROFILE": ""}</Link></div>
             {/* <div className={menuOpen ? "navli-mobile":"navli"} id={props.bookpage ? "book_button_hidden":"book_button"}><Link to="/booking">BOOK NOW</Link></div> */}
             <div className={menuOpen ? "navli-mobile":"navli"} id="globe" onClick={()=>{handleGlobeClick();}} style={{color:"white"}}>🌏︎</div>
-            <div className={menuOpen ? "navli-mobile":"navli"} id="lock" onClick={()=>{logoutHandler()}} style={{color:"white"}}>{token ? "LOGOUT" : "🔐"}</div>
+            <div className={menuOpen ? "navli-mobile":"navli"} id="lock" onClick={()=>{logoutHandler()}} style={{color:"white", fontWeight:"bold"}}>{token ? "LOGOUT" : "🔐"}</div>
             
             
 

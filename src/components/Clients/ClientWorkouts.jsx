@@ -49,7 +49,7 @@ const ClientWorkouts= (id) => {
                    <List>
                      {day.exercises.map((exercise, exerciseIndex) => (
                        <ListItem key={exerciseIndex}>
-                         <ListItemText primary={exercise.name} secondary={`Sets: ${exercise.sets} - Reps: ${exercise.reps} - Rest: ${exercise.rest} - VidId: ${exercise.vidId}`} />
+                         <ListItemText primary={exercise.name} secondary={`Sets: ${exercise.sets} - Reps: ${exercise.reps} - Rest: ${exercise.rest}`} />
                          <WorkoutVideoModal vidId = {exercise.vidId}/>
                        </ListItem>
                      ))}

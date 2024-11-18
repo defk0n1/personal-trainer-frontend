@@ -1,7 +1,10 @@
 import {useGetClientWorkoutPlanQuery} from '../../../slices/clientsApiSlice'
 import { useEffect, useState } from 'react';
-import {Box, Container, Typography, Grid, Card, CardContent, List, ListItem, ListItemText, TextField, Button, Alert,CircularProgress } from '@mui/material';
+import {Box, Container, Typography, Grid, Card, CardContent, List, ListItem, ListItemText, TextField, Button, Alert,CircularProgress,Autocomplete } from '@mui/material';
 import {useCreateWorkoutPlanMutation} from '../../../slices/adminApiSlice'
+import ExercisesData from './WorkoutData';
+
+
 
 
 
@@ -68,13 +71,47 @@ const CreateWorkout= ({id}) => {
     });
   };
 
-  const handleExerciseChange = (e, dayIndex , exerciseIndex) => {
-    const { name, value } = e.target;
-    const updatedDays= editData.days.map((day, mIndex) => {
+  // const handleExerciseChange = (e, dayIndex , exerciseIndex) => {
+  //   const { name, value } = e.target;
+  //   const updatedDays= editData.days.map((day, mIndex) => {
+  //     if (mIndex === dayIndex) {
+  //       const updatedExercises = day.exercises.map((exercise, iIndex) =>
+  //         iIndex === exerciseIndex ? { ...exercise, [name]: value } : exercise
+  //       );
+  //       return { ...day, exercises: updatedExercises };
+  //     }
+  //     return day;
+  //   });
+  //   setEditData({
+  //     ...editData,
+  //     days: updatedDays,
+  //   });
+  // };
+  const handleExerciseChange = (e, dayIndex, exerciseIndex,v) => {
+    console.log(e)
+    const attributes = {name:'' , value:'',vidId:''} 
+    if(e.type == "change"){
+      attributes.name = e.target.name
+      attributes.value = e.target.value
+      attributes.vidId = Object.keys(ExercisesData.exerciseNames).find(key => ExercisesData.exerciseNames[key] === attributes.value)
+      console.log(attributes.vidId)
+
+
+  }else if(e.type =="click"){
+      attributes.name = "name"
+      attributes.value = v.label
+      attributes.vidId = v.id
+      console.log(attributes.vidId)
+
+      
+  }
+    const updatedDays = editData.days.map((day, mIndex) => {
       if (mIndex === dayIndex) {
         const updatedExercises = day.exercises.map((exercise, iIndex) =>
-          iIndex === exerciseIndex ? { ...exercise, [name]: value } : exercise
+          iIndex === exerciseIndex ? { ...exercise, [attributes.name]: attributes.value, vidId : attributes.vidId} : exercise
         );
+        console.log(day.exercises)
+
         return { ...day, exercises: updatedExercises };
       }
       return day;
@@ -208,12 +245,24 @@ const CreateWorkout= ({id}) => {
                       <ListItem key={exerciseIndex}>
                         {(
                           <>
-                            <TextField
+                            {/* <TextField
                               fullWidth
                               label="Exercise Name"
                               name="name"
                               value={exercise.name}
                               onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
+                            /> */}
+                            
+                            <Autocomplete
+                              options={Object.keys(ExercisesData.exerciseNames).map((key)=>({id : key, label:ExercisesData.exerciseNames[key]}))}
+                              renderInput={(params) => (
+                                <TextField {...params} label="Select an exercice" variant="outlined" />
+                              )}
+                              onChange={(e,v) => {console.log(v);handleExerciseChange(e, dayIndex, exerciseIndex,v)}}
+                              value={exercise.name} 
+                              name="name"
+                              freeSolo
+                              openOnFocus 
                             />
                             <TextField
                               fullWidth
@@ -236,13 +285,13 @@ const CreateWorkout= ({id}) => {
                               value={exercise.rest}
                               onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
                             />
-                             <TextField
+                             {/* <TextField
                               fullWidth
                               label="vidId"
                               name="vidId"
                               value={exercise.rest}
                               onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
-                            />
+                            /> */}
                             <Button
                               variant="contained"
                               color="error"

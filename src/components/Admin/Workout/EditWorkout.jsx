@@ -1,48 +1,49 @@
-import {useGetClientWorkoutPlanQuery} from '../../../slices/clientsApiSlice'
+import { useGetClientWorkoutPlanQuery } from '../../../slices/clientsApiSlice'
 import { useEffect, useState } from 'react';
-import {Box, Container, Typography, Grid, Card, CardContent, List, ListItem, ListItemText, TextField, Button, Alert,CircularProgress } from '@mui/material';
-import {useUpdateWorkoutPlanByIdMutation} from '../../../slices/adminApiSlice'
+import { Box, Container, Typography, Grid, Card, CardContent, List, ListItem, ListItemText, TextField, Button, Alert, CircularProgress, Autocomplete } from '@mui/material';
+import { useUpdateWorkoutPlanByIdMutation } from '../../../slices/adminApiSlice'
+import ExercisesData from './WorkoutData';
 
 
 
 
-const EditWorkout= ({id}) => {
-    const initWorkoutPlan = {
-        name: "",
-        description: "",
-        days: [
-        ],
-      };
+const EditWorkout = ({ id }) => {
+  const initWorkoutPlan = {
+    name: "",
+    description: "",
+    days: [
+    ],
+  };
 
-      console.log(id)
-  const { data, isLoading, isError, isSuccess,error } = useGetClientWorkoutPlanQuery(id,{refetchOnMountOrArgChange: true});
+  console.log(id)
+  const { data, isLoading, isError, isSuccess, error } = useGetClientWorkoutPlanQuery(id, { refetchOnMountOrArgChange: true });
   const [updateWorkout] = useUpdateWorkoutPlanByIdMutation()
-  const workoutData = isLoading ? [] : isError ? error : isSuccess ? data.clientWorkoutPlan[0] : null 
+  const workoutData = isLoading ? [] : isError ? error : isSuccess ? data.clientWorkoutPlan[0] : null
 
   console.log(workoutData)
 
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState(initWorkoutPlan);
-  
+
   const [err, setErr] = useState("");
 
   useEffect(() => {
     if (isSuccess) {
       setEditData(workoutData);
     }
-  },[workoutData]);
+  }, [workoutData]);
 
 
 
-  
+
 
   const handleEditClick = () => {
     setIsEditing(true);
-    
+
   };
 
   const handleSaveClick = () => {
-    const payload = editData 
+    const payload = editData
     console.log(payload)
 
     for (const day of editData.days) {
@@ -57,8 +58,8 @@ const EditWorkout= ({id}) => {
         }
       }
     }
-  
-    const res = updateWorkout(payload,id).unwrap()
+
+    const res = updateWorkout(payload, id).unwrap()
 
     setIsEditing(false);
     setErr("");
@@ -83,13 +84,31 @@ const EditWorkout= ({id}) => {
     });
   };
 
-  const handleExerciseChange = (e, dayIndex , exerciseIndex) => {
-    const { name, value } = e.target;
-    const updatedDays= editData.days.map((day, mIndex) => {
+  const handleExerciseChange = (e, dayIndex, exerciseIndex,v) => {
+    console.log(e)
+    const attributes = {name:'' , value:'',vidId:''} 
+    if(e.type == "change"){
+      attributes.name = e.target.name
+      attributes.value = e.target.value
+      attributes.vidId = Object.keys(ExercisesData.exerciseNames).find(key => ExercisesData.exerciseNames[key] === attributes.value)
+      console.log(attributes.vidId)
+
+
+  }else if(e.type =="click"){
+      attributes.name = "name"
+      attributes.value = v.label
+      attributes.vidId = v.id
+      console.log(attributes.vidId)
+
+      
+  }
+    const updatedDays = editData.days.map((day, mIndex) => {
       if (mIndex === dayIndex) {
         const updatedExercises = day.exercises.map((exercise, iIndex) =>
-          iIndex === exerciseIndex ? { ...exercise, [name]: value } : exercise
+          iIndex === exerciseIndex ? { ...exercise, [attributes.name]: attributes.value, vidId : attributes.vidId} : exercise
         );
+        console.log(day.exercises)
+
         return { ...day, exercises: updatedExercises };
       }
       return day;
@@ -103,7 +122,7 @@ const EditWorkout= ({id}) => {
   const handleAddDay = () => {
     const newDay = {
       day: "",
-      exercises: [{ name: "",sets:"", reps: "" ,rest:"",vidId:""}],
+      exercises: [{ name: "", sets: "", reps: "", rest: "", vidId: "" }],
     };
     setEditData({
       ...editData,
@@ -112,7 +131,7 @@ const EditWorkout= ({id}) => {
   };
 
   const handleAddExercise = (dayIndex) => {
-    const newExercise = { name: "",sets:"", reps: "" ,rest:"",vidId:""};
+    const newExercise = { name: "", sets: "", reps: "", rest: "", vidId: "" };
     const updatedDays = editData.days.map((day, index) => {
       if (index === dayIndex) {
         return { ...day, exercises: [...day.exercises, newExercise] };
@@ -125,7 +144,7 @@ const EditWorkout= ({id}) => {
     });
   };
 
-  const handleRemoveDay= (dayIndex) => {
+  const handleRemoveDay = (dayIndex) => {
     const updatedDays = editData.days.filter((_, index) => index !== dayIndex);
     setEditData({
       ...editData,
@@ -155,22 +174,20 @@ const EditWorkout= ({id}) => {
     return exercise.name.trim() !== "" && exercise.reps.trim() !== "" && exercise.sets.trim() !== "" && exercise.rest.trim() !== "";
   };
 
-  const showExerciceModal = (vidId) => {
+ 
 
-  }
-  
   const innerContent = (<>
-        {isLoading ?    <Box sx={{ display: 'flex', alignItems:"center" ,  justifyContent:"center" ,flexDirection:"column", height:"90%"}}>
+    {isLoading ? <Box sx={{ display: 'flex', alignItems: "center", justifyContent: "center", flexDirection: "column", height: "90%" }}>
       <CircularProgress />
-    </Box> : isError ? 
-        
-        <Container sx={{py:"0",marginBottom:"20%"}}>
-         <Typography variant="h4" gutterBottom sx={{color:"red", textAlign:"center"}}>
-                No workouts set yet         </Typography>
-         </Container>
-        
-        : 
-        <Container maxWidth="xl">
+    </Box> : isError ?
+
+      <Container sx={{ py: "0", marginBottom: "20%" }}>
+        <Typography variant="h4" gutterBottom sx={{ color: "red", textAlign: "center" }}>
+          No workouts set yet         </Typography>
+      </Container>
+
+      :
+      <Container maxWidth="xl">
         <Container sx={{ padding: 2 }}>
           {err && <Alert severity="error">{err}</Alert>}
           {isEditing ? (
@@ -205,7 +222,7 @@ const EditWorkout= ({id}) => {
               </Typography>
             </>
           )}
-  
+
           {isEditing ? (
             <Button variant="contained" color="primary" onClick={handleSaveClick} sx={{ marginBottom: 2 }}>
               Save
@@ -236,12 +253,12 @@ const EditWorkout= ({id}) => {
                         onChange={(e) => handleDayChange(e, dayIndex)}
                         sx={{ marginBottom: 2 }}
                       />
-                    
+
                       <Button
                         variant="contained"
                         color="error"
                         onClick={() => handleRemoveDay(dayIndex)}
-                        
+
                       >
                         Remove day
                       </Button>
@@ -253,16 +270,46 @@ const EditWorkout= ({id}) => {
                   )}
                   <List>
                     {day.exercises.map((exercise, exerciseIndex) => (
-                      <ListItem key={exerciseIndex}>
+                      <ListItem  key={exerciseIndex}>
                         {isEditing ? (
                           <>
-                            <TextField
+                            {/* <TextField
                               fullWidth
                               label="Exercise Name"
                               name="name"
                               value={exercise.name}
                               onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
+                            /> */}
+                            {/* <Autocomplete
+                              options={Object.values(ExercisesData.exerciseNames)}
+                              renderInput={(params) => (
+                                <TextField {...params} label="Select an exercice" variant="outlined" />
+                              )}
+                              onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
+                              value={exercise.name} 
+                              name="name"
+                              freeSolo
+                              openOnFocus 
+                            /> */}
+                            <Grid container spacing={2}>
+
+                            <Grid item xs={12}>
+
+                            <Autocomplete
+                              options={Object.keys(ExercisesData.exerciseNames).map((key)=>({id : key, label:ExercisesData.exerciseNames[key]}))}
+                              renderInput={(params) => (
+                                <TextField {...params} label="Select an exercice" variant="outlined" />
+                              )}
+                              onChange={(e,v) => {console.log(v);handleExerciseChange(e, dayIndex, exerciseIndex,v)}}
+                              value={exercise.name} 
+                              name="name"
+                              freeSolo
+                              openOnFocus 
+                              fullWidth
                             />
+                              </Grid>
+                              <Grid item xs={3}>
+
                             <TextField
                               fullWidth
                               label="Sets"
@@ -270,38 +317,54 @@ const EditWorkout= ({id}) => {
                               value={exercise.sets}
                               onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
                             />
-                             <TextField
+                              </Grid>
+                              <Grid item xs={3}>
+
+                            <TextField
                               fullWidth
                               label="Reps"
                               name="reps"
                               value={exercise.reps}
                               onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
                             />
-                             <TextField
+                           </Grid>
+                           <Grid item xs={3}>
+
+                            <TextField
                               fullWidth
                               label="Rest"
                               name="rest"
                               value={exercise.rest}
                               onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
                             />
-                            <TextField
+                            </Grid>
+
+                            {/* <TextField
                               fullWidth
                               label="Vid"
                               name="vidId"
-                              value={exercise.vidId}
-                              onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
-                            />
+                              value={}
+                              // onChange={(e) => handleExerciseChange(e, dayIndex, exerciseIndex)}
+                            /> */}
+                              <Grid item xs={3}>
+
                             <Button
                               variant="contained"
                               color="error"
                               onClick={() => handleRemoveExercise(dayIndex, exerciseIndex)}
-                              
+
                             >
                               Remove Exercise
                             </Button>
+                            
+                            </Grid>
+
+                            </Grid>
+
+
                           </>
-                        ) : (  
-                          <ListItemText primary={exercise.name} secondary={`Sets: ${exercise.sets} - Reps: ${exercise.reps} - Rest: ${exercise.rest} - VidID : ${exercise.vidId}` } /> 
+                        ) : (
+                          <ListItemText primary={exercise.name} secondary={`Sets: ${exercise.sets} - Reps: ${exercise.reps} - Rest: ${exercise.rest} - VidID : ${exercise.vidId}`} />
                         )}
                       </ListItem>
                     ))}
@@ -317,14 +380,14 @@ const EditWorkout= ({id}) => {
           ))}
         </Grid>
       </Container>
-        }
-        </>
+    }
+  </>
 
 
 
-    )
+  )
 
-    return innerContent
+  return innerContent
 }
 
 export default EditWorkout

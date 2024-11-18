@@ -15,6 +15,7 @@ import ClientProfile from './pages/ClientProfile.jsx';
 import PersistLogin from './pages/PersistLogin.jsx';
 import SignInPage from './pages/SignInPage.jsx';
 import Test from './pages/test.jsx';
+import SearchWorkout from './components/Admin/Workout/SearchWorkout.jsx';
 
 
 
@@ -37,6 +38,8 @@ root.render(
         <Route path="/dashboard" element={<ClientsList />} />
         </Route>
         <Route path="/signup" element={<Test/>}></Route>
+        <Route path="/test" element={<SearchWorkout/>}></Route>
+
         </Routes>
       </BrowserRouter>
     </Provider>
