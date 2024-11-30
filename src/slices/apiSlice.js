@@ -1,9 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { setCredentials } from './authSlice';
 
+
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+
+
 const baseQuery = fetchBaseQuery({
-    baseUrl: 'https://personal-trainer-backend-dwwf.onrender.com',
-    // baseUrl: 'http://localhost:5000',
+    baseUrl: apiBaseUrl,
 
     credentials: 'include',
     prepareHeaders:(headers, {getState}) => {
