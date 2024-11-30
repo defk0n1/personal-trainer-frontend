@@ -4,6 +4,8 @@ import { setCredentials } from './authSlice';
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
+console.log(apiBaseUrl)
+
 
 const baseQuery = fetchBaseQuery({
     baseUrl: apiBaseUrl,
