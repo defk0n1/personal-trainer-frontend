@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Personal Trainer Management Platform (FRONTEND)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🏋️ Project Overview
 
-## Available Scripts
+ This project is the frontend of a comprehensive web application designed to provide a personal trainer's clients with personalized fitness experiences. The platform offers customized diet plans, workout routines, exercise video guides, and a weight tracking system to help users achieve their fitness goals.
 
-In the project directory, you can run:
+## 🚀 Key Features
 
-### `npm start`
+- **Personalized Diet Plans**: Tailored nutritional guidance for individual client needs
+- **Custom Workout Routines**: Individualized exercise programs
+- **Exercise Video Library**: Detailed video demonstrations for each exercise
+- **Weight Progress Tracker**: Comprehensive weight and fitness metric logging
+- **User Authentication**: Secure login and profile management
+- **Responsive Design**: Fully mobile and desktop compatible
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📦 Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React.js
+- **Backend**: Node.js & Express.js
+- **Database**: MongoDB
+- **State Management**: Redux
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠 Prerequisites
 
-### `npm run build`
+Before you begin, ensure you have the following installed:
+- Node.js (v16.0.0 or later)
+- npm (v8.0.0 or later)
+- MongoDB (v5.0 or later)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔐 Authentication Workflow
+1. User registers with email and password
+2. Generate unique JWT token
+3. Store token in secure HTTP-only cookie
+4. Authenticate protected routes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 💡 Key Components
 
-### `npm run eject`
+### Diet Plan Module
+- Custom meal planning
+- Nutritional tracking
+- Calorie calculation
+- Macro/micronutrient breakdown
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Workout Routine Generator
+- Exercise type selection
+- Difficulty level adjustment
+- Video-guided demonstrations
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Weight Logger
+- Daily/weekly weight input
+- Progress graph visualization
+- Body measurement tracking
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
